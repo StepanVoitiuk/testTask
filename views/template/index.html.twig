@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title%}
+<title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+    <body>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Group</th>
+            <th>Faculty</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.user_name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.sex }}</td>
+                <td>{{ user.user_group }}</td>
+                <td>{{ user.faculty }}</td>
+                <td>
+                    <a href="edit?id={{ user.id }}" type="button" data-value="{{ user.id }}" name="edit" >Edit user</a>
+                    <a href="delete?id={{ user.id }}" type="button" data-value="{{ user.id }}" name="delete">Delete user</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </body>
+{% endblock %}

@@ -1,0 +1,13 @@
+{
+    "name": "atepanvoitiuk/test-task",
+    "description": "test package",
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "StepanVoitiuk",
+            "email": "stepan.voitiuk@gmail.com"
+        }
+    ]
+}

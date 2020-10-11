@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+    <body>
+    <form action="/update" class="needs-validation text-center border border-light p-5" novalidate method="post">
+        <div class="form-group">
+            <input type="hidden" value="{{ user.id }}" name="id">
+            <label for="user_name">Username:</label>
+            <input type="text" class="form-control mb-4" id="username" value="{{ user.user_name }}" name="user_name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname:</label>
+            <input type="text" class="form-control" id="surname" value="{{ user.surname }}" name="surname" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control mb-4" id="age" value="{{ user.age }}" name="age" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="user_group">Group:</label>
+            <input type="text" class="form-control" id="user_group" value="{{ user.user_group }}" name="user_group" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="faculty">Faculty:</label>
+            <input type="text" class="form-control mb-4" id="faculty" value="{{ user.faculty }}" name="faculty" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <input type="text" class="form-control" id="sex" value="{{ user.sex }}" name="sex" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    </body>
+{% endblock %}
